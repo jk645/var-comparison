@@ -1,8 +1,0 @@
-/* Removed the base styles that came from Vite for now since included Bootstrap in index.html */
-
-.iss-icon::after {
-  content: "ISS";
-  color: #fff;
-  border: 5px solid #333;
-  background-color: #333;
-}

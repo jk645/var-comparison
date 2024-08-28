@@ -16,15 +16,30 @@ To run for development purposes:
 
 1. First follow the steps above to run for preview purposes. This ensures your local environment is set up.
 1. Run: `npm run dev`
-1. Navigate in your web browser to: `http://localhost:5173/`
+1. Navigate in your web browser to one of the following: 
+   - Angular: `http://localhost:4200/`
+   - React: `http://localhost:5173/`
+   - Vue: `http://localhost:5174/`
 1. You should now see the Single-Page-App, as it would look after a user has signed in.
-1. As you make changes within the `var-spa` folder, you should see them reflected in your web browser.
+1. As you make changes within the `var-spa-*` folders, you should see the changes reflected in your web browser.
 
 ## Sections of the codebase
 
 #### Single-Page-App
 
-The Single-Page-App is located in the `var-spa` folder. It is a Vue.js TypeScript project built with the Vite build tool. This is where the vast majority of feature development work takes place.
+For each framework (Angular, React, Vue), a Single-Page-App is located in the respective `var-spa-*` folder. 
+
+##### Angular
+
+In the `var-spa-angular` folder is an Angular project built with the Angular CLI tool.
+
+##### React
+
+In the `var-spa-react` folder is a React TypeScript project built with the Vite build tool.
+
+##### Vue.js
+
+In the `var-spa-vue` folder is a Vue.js TypeScript project built with the Vite build tool.
 
 #### UI Asset Server
 

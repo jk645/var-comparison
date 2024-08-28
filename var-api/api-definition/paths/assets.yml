@@ -1,0 +1,57 @@
+get:
+  operationId: getAssets
+  summary: Returns a list of assets.
+  description: Each asset has a lat/long and some additional info.
+  responses:
+    '200':  # status code
+      description: A JSON array of assets
+      content:
+        application/json:
+          schema: 
+            type: array
+            items: 
+              type: object
+              properties:
+                id:
+                  type: string
+                location:
+                  type: object
+                  properties:
+                    lng:
+                      type: integer
+                    lat:
+                      type: integer
+                heading:
+                  type: integer
+                speed:
+                  type: integer
+            example:
+              [
+                {
+                  id: "1",
+                  location: {
+                    lng: 139.839478,
+                    lat: 35.652832
+                  },
+                  heading: 332,
+                  speed: 36
+                },
+                {
+                  id: "2",
+                  location: {
+                    lng: -0.118092,
+                    lat: 51.509865
+                  },
+                  heading: 332,
+                  speed: 28
+                },
+                {
+                  id: "3",
+                  location: {
+                    lng: -73.991884,
+                    lat: 40.709315
+                  },
+                  heading: 152,
+                  speed: 51
+                }
+              ]

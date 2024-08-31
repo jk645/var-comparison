@@ -18,5 +18,8 @@ const props = defineProps<{
       <dt>Speed</dt>
       <dd>{{ props.vehicle.speed }}</dd>
     </dl>
+    <p>
+      <RouterLink :to="{ name: 'vehicle-details', params: { id: props.vehicle.id } }">Details</RouterLink>
+    </p>
   </div>
 </template>

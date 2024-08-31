@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import VehicleList from './components/VehicleList.vue';
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <VehicleList />
+  <header>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+    </nav>
+  </header>
+  <main>
+    <RouterView />
+  </main>
 </template>

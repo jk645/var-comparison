@@ -8,8 +8,8 @@ export default function VehicleList({ vehicleList }: {vehicleList: Vehicle[]}) {
   const [unassignedOnly, setUnassignedOnly] = useState(false);
 
   const listItems = vehicleList
-    .filter(v => v.id.includes(filterText))  // Apply text filter
-    .filter(v => unassignedOnly ? !v.location : true)  // Apply "unassigned only" filter
+    .filter(v => v.driver.includes(filterText))  // Apply text filter
+    .filter(v => unassignedOnly ? !v.driver : true)  // Apply "unassigned only" filter
     .map(v => 
       <li key={v.id}>
         <VehicleListItem vehicle={v} />

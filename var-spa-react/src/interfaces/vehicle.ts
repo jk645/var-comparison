@@ -1,5 +1,6 @@
 export interface Vehicle {
   id: string;
+  driver: string;
   location: VehicleLocation;
   heading: number;
   speed: number;

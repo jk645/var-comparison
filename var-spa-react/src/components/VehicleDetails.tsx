@@ -5,6 +5,8 @@ export default function VehicleDetails({ vehicleDetails }: {vehicleDetails: Vehi
     <dl>
       <dt>ID</dt>
       <dd>{ vehicleDetails.id }</dd>
+      <dt>Driver</dt>
+      <dd>{ vehicleDetails.driver }</dd>
       <dt>Location</dt>
       <dd>Lat: { vehicleDetails.location.lat }, Long: { vehicleDetails.location.lng }</dd>
       <dt>Heading</dt>

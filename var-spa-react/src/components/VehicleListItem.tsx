@@ -7,6 +7,8 @@ export default function VehicleListItem({ vehicle }: {vehicle: Vehicle}) {
       <dl>
         <dt>ID</dt>
         <dd>{ vehicle.id }</dd>
+        <dt>Driver</dt>
+        <dd>{ vehicle.driver }</dd>
         <dt>Location</dt>
         <dd>Lat: { vehicle.location.lat }, Long: { vehicle.location.lng }</dd>
         <dt>Heading</dt>

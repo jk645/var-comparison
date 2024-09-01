@@ -14,6 +14,8 @@ get:
               properties:
                 id:
                   type: string
+                driver:
+                  type: string
                 location:
                   type: object
                   properties:
@@ -29,6 +31,7 @@ get:
               [
                 {
                   id: "1",
+                  driver: "Aaron",
                   location: {
                     lng: 139.839478,
                     lat: 35.652832
@@ -38,6 +41,7 @@ get:
                 },
                 {
                   id: "2",
+                  driver: "",
                   location: {
                     lng: -0.118092,
                     lat: 51.509865
@@ -47,6 +51,7 @@ get:
                 },
                 {
                   id: "3",
+                  driver: "Amy",
                   location: {
                     lng: -73.991884,
                     lat: 40.709315

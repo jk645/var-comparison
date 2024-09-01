@@ -11,6 +11,8 @@ const props = defineProps<{
     <dl>
       <dt>ID</dt>
       <dd>{{ props.vehicle.id }}</dd>
+      <dt>Driver</dt>
+      <dd>{{ props.vehicle.driver }}</dd>
       <dt>Location</dt>
       <dd>Lat: {{ props.vehicle.location.lat }}, Long: {{ props.vehicle.location.lng }}</dd>
       <dt>Heading</dt>

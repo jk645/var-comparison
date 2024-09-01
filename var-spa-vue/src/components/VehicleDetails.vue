@@ -15,6 +15,8 @@ const {data: vehicle, error} = useFetch<Vehicle>(`http://localhost:9000/assets/$
     <dl>
       <dt>ID</dt>
       <dd>{{ vehicle.id }}</dd>
+      <dt>Driver</dt>
+      <dd>{{ vehicle.driver }}</dd>
       <dt>Location</dt>
       <dd>Lat: {{ vehicle.location.lat }}, Long: {{ vehicle.location.lng }}</dd>
       <dt>Heading</dt>

@@ -11,3 +11,5 @@ servers:
 paths:
   /assets:
     $ref: ./paths/assets.yml
+  /assets/{assetId}:
+    $ref: ./paths/asset-details.yml

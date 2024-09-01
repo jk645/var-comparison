@@ -1,0 +1,42 @@
+get:
+  operationId: getAssetDetails
+  summary: Returns the details for an asset.
+  description: An asset has a lat/long and some additional info.
+  parameters:
+    - in: path
+      name: assetId
+      schema:
+        type: string
+      required: true
+      description: ID of the asset to get
+  responses:
+    '200':  # status code
+      description: A JSON object of asset details
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+              location:
+                type: object
+                properties:
+                  lng:
+                    type: integer
+                  lat:
+                    type: integer
+              heading:
+                type: integer
+              speed:
+                type: integer
+            example:
+              {
+                id: "1",
+                location: {
+                  lng: 139.839478,
+                  lat: 35.652832
+                },
+                heading: 332,
+                speed: 36
+              }

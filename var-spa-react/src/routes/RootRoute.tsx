@@ -1,6 +1,8 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigation } from "react-router-dom";
 
 export default function RootRoute() {
+  const navigation = useNavigation();
+
   return (
     <>
       <header>
@@ -8,8 +10,13 @@ export default function RootRoute() {
           <Link to={"/"}>Home</Link>
         </nav>
       </header>
-      <main>
+      <main
+        className={
+          navigation.state === "loading" ? "loading" : ""
+        }
+      >
         <Outlet />
+        {navigation.state === "loading" && <div className="loading-indicator">Loading...</div>}
       </main>
     </>
   );

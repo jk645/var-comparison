@@ -1,23 +1,20 @@
 import { useLoaderData } from "react-router-dom";
+import { getVehicleDetails } from "../helpers/vehicles";
+import { Vehicle } from "../interfaces/vehicle";
+import VehicleDetails from "../components/VehicleDetails";
 
 export async function loader({ params }: any) {
-  // TODO: call helper function that calls API
-  const vehicleDetails = {
-    id: params.id,
-    name: "hello",
-    type: "good",
-  };
+  const vehicleDetails = await getVehicleDetails(params.id);
   return { vehicleDetails };
 }
 
 export default function VehicleDetailsRoute() {
-  const { vehicleDetails }: any = useLoaderData();
+  const { vehicleDetails } = useLoaderData() as { vehicleDetails: Vehicle };
 
   return (
     <div>
-      VEHICLE DETAILS...
-      { vehicleDetails.id }
-      { vehicleDetails.name }
+      <h1>Vehicle Details</h1>
+      <VehicleDetails vehicleDetails={vehicleDetails} />
     </div>
   );
 }

@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Vehicle } from "../interfaces/vehicle";
+import VehicleListItem from "./VehicleListItem";
 
-export default function VehicleList() {
+export default function VehicleList({ vehicleList }: {vehicleList: Vehicle[]}) {
+  const listItems = vehicleList.map(vehicle => 
+    <li key={vehicle.id}>
+      <VehicleListItem vehicle={vehicle} />
+    </li>
+  );
+
   return (
-    <>
-      <ul>
-        <li><Link to={`vehicles/${123}`}>123</Link></li>
-        <li><Link to={`vehicles/${456}`}>456</Link></li>
-        <li><Link to={`vehicles/${789}`}>789</Link></li>
-      </ul>
-    </>
+    <ul>
+      {listItems}
+    </ul>
   );
 }

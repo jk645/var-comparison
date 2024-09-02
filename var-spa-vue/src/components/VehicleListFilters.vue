@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue';
+
 const props = defineProps<{
   filterText: string;
   unassignedOnly: boolean;
@@ -9,12 +11,15 @@ const emit = defineEmits<{
   unassignedOnlyChanged: [newValue: boolean];
 }>();
 
-function handleFilterTextInput(e: any) {
-  emit('filterTextChanged', e.target.value);
-}
-function handleUnassignedOnlyChange(e: any) {
-  emit('unassignedOnlyChanged', e.target.checked);
-}
+const filterText = ref<string>(props.filterText);
+watch(filterText, () => {
+  emit('filterTextChanged', filterText.value);
+});
+
+const unassignedOnly = ref<boolean>(props.unassignedOnly);
+watch(unassignedOnly, () => {
+  emit('unassignedOnlyChanged', unassignedOnly.value);
+});
 </script>
 
 <template>
@@ -23,16 +28,14 @@ function handleUnassignedOnlyChange(e: any) {
       Driver
       <input
         type="text"
-        :value="props.filterText"
-        @input="handleFilterTextInput"
+        v-model="filterText"
       />
     </label>
     <label>
       Unassigned
       <input
         type="checkbox"
-        :checked="props.unassignedOnly"
-        @change="handleUnassignedOnlyChange"
+        v-model="unassignedOnly"
       />
     </label>
   </form>

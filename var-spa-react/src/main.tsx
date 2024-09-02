@@ -6,6 +6,8 @@ import RootRoute from './routes/RootRoute';
 import RootError from './routes/RootError';
 import HomeRoute, { loader as homeLoader } from './routes/HomeRoute';
 import VehicleDetailsRoute, { loader as vehicleDetailsLoader } from './routes/VehicleDetailsRoute';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 )

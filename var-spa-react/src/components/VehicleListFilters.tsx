@@ -1,16 +1,10 @@
-interface VehicleListFiltersProps {
-  filterText: string;
-  setFilterText: any;
-  unassignedOnly: boolean;
-  setUnassignedOnly: any;
-}
+import { useDispatch, useSelector } from "react-redux";
+import { setFilterText, setUnassignedOnly } from "../slices/vehicleListFiltersSlice";
 
-export default function VehicleListFilters({
-  filterText,
-  setFilterText,
-  unassignedOnly,
-  setUnassignedOnly,
-}: VehicleListFiltersProps) {
+export default function VehicleListFilters() {
+  const filterText = useSelector((state: any) => state.vehicleListFilters.filterText);
+  const unassignedOnly = useSelector((state: any) => state.vehicleListFilters.unassignedOnly);
+  const dispatch = useDispatch();
 
   return (
     <form>
@@ -19,7 +13,7 @@ export default function VehicleListFilters({
         <input
           type="text"
           value={filterText}
-          onChange={(e) => setFilterText(e.target.value)}
+          onChange={(e) => dispatch(setFilterText(e.target.value))}
         />
       </label>
       <label>
@@ -27,7 +21,7 @@ export default function VehicleListFilters({
         <input
           type="checkbox"
           checked={unassignedOnly}
-          onChange={(e) => setUnassignedOnly(e.target.checked)}
+          onChange={(e) => dispatch(setUnassignedOnly(e.target.checked))}
         />
       </label>
     </form>

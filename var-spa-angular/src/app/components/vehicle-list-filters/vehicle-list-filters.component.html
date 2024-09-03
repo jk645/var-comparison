@@ -1,1 +1,16 @@
-<p>vehicle-list-filters works!</p>
+<form [formGroup]="form">
+  <label>
+    Driver
+    <input
+      type="text"
+      formControlName="filterText"
+    />
+  </label>
+  <label>
+    Unassigned
+    <input
+      type="checkbox"
+      formControlName="unassignedOnly"
+    />
+  </label>
+</form>

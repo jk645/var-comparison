@@ -1,0 +1,10 @@
+<div>
+  <h1>Home</h1>
+  @if (vehicleList$ | async; as vehicleList) {
+    <app-vehicle-list [vehicleList]="vehicleList"></app-vehicle-list>
+  } @else if (vehicleListError) {
+    <span>Unable to fetch vehicle list. Error message: "{{ vehicleListError.message }}"</span>
+  } @else {
+    <span>Loading...</span>
+  }
+</div>

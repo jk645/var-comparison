@@ -1,0 +1,19 @@
+@if (vehicle) {
+  <div>
+    <dl>
+      <dt>ID</dt>
+      <dd>{{ vehicle.id }}</dd>
+      <dt>Driver</dt>
+      <dd>{{ vehicle.driver }}</dd>
+      <dt>Location</dt>
+      <dd>Lat: {{ vehicle.location.lat }}, Long: {{ vehicle.location.lng }}</dd>
+      <dt>Heading</dt>
+      <dd>{{ vehicle.heading }}</dd>
+      <dt>Speed</dt>
+      <dd>{{ vehicle.speed }}</dd>
+    </dl>  
+    <p>
+      <a [routerLink]="['/vehicles', vehicle.id]">Details</a>
+    </p>
+  </div>
+}
